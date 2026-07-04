@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Teko", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #06110b;
+  color: #f2f7f2;
+  background-image:
+    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(28, 99, 57, 0.35), transparent 60%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(242, 247, 242, 0.02) 0px,
+      rgba(242, 247, 242, 0.02) 2px,
+      transparent 2px,
+      transparent 84px
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.live-dot {
+  box-shadow: 0 0 0 0 rgba(255, 77, 79, 0.6);
+  animation: live-pulse 1.8s infinite;
+}
+
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 79, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 77, 79, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 79, 0); }
+}
+
+.scoreboard-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+::selection {
+  background: #d6ff3c;
+  color: #06110b;
+}
+
+*:focus-visible {
+  outline: 2px solid #d6ff3c;
+  outline-offset: 2px;
+}
